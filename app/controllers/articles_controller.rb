@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+  http_basic_authenticate_with name: 'user', password: 'password',
+                               except: %i[index show]
+
   def new
     article
   end
